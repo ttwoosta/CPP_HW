@@ -1,5 +1,10 @@
-// CPP_HW2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/********************************************************************
+	Program: Book store
+	Class: CPTR 2300 W01 Data Structures
+	
+	This is an example of linked list data structure that allows
+	fast searching elements stored in the list
+********************************************************************/
 
 #include <iostream>
 #include <cassert>
@@ -23,6 +28,8 @@ struct bookType
 
 	bookType* link;
 };
+
+typedef bookType* bookPtr;
 
 class linkedListBook
 {
@@ -79,7 +86,7 @@ int main()
 	bookList->insertAt(new bookType(9, "E-BUSINESS THE EASY WAY", "JONES", "PUBLISH OUR WAY", 328, 37.99), 2);
 
 	int bookNum = 1;
-	bookType* aBook;
+	bookPtr aBook;
 
 	cout << "*************************************************" << endl;
 	cout << "Welcome to my book store" << endl;
@@ -91,7 +98,7 @@ int main()
 		cout << "Press number 0 to exit, press 99 to print." << endl;
 		cout << "----------------------------------------------" << endl;
 		
-		cout << "Enter any number from 1 - 10 to search for a book: ";
+		cout << "Enter any number from 1 - 10 to search for a book: "; 
 		cin >> bookNum;
 
 		// Restore the input stream
@@ -119,7 +126,7 @@ int main()
 			}
 		}
 		else if (bookNum == 99) {
-			bookType *currBook = bookList->firstBook();
+			bookPtr currBook = bookList->firstBook();
 			while (currBook != NULL)
 			{
 				cout << currBook->desc() << endl;
