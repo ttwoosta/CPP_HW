@@ -2,7 +2,7 @@
 	CPTR 2300 W01 Data Structures
 	Assignment: Homework 4
 	Date: 10/22/2019
-	Purpose: The program prompt the user to place an order by enter number from 0 to 6
+	Purpose: The program prompt the user to place an order by enter number from 1 to 6
 	that correspond to food item in database.
 	The user complete the order by enter a negative number. The program print completed
 	kind order Food have been ordered and the total of the order.
@@ -38,16 +38,16 @@ int main()
 
 	while (value >= 0)
 	{
-		cout << "Please enter a value from 0 to " + to_string(dbSize) + ":  ";
+		cout << "Please enter a value from 1 to " + to_string(dbSize) + ":  ";
 		cin >> value;
 		if (value < 0)
 			break;
-		else if (value >= dbSize) {
+		else if (value > dbSize) {
 			cout << "You entered invalid number" << endl;
 			continue;
 		}
 
-		food = foodDb[value];
+		food = foodDb[value-1];
 		cout << food->desc() << endl;
 		order.push_back(food);
 	}
