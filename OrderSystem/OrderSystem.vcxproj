@@ -151,7 +151,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bread.cpp" />
+    <ClCompile Include="Drink.cpp" />
+    <ClCompile Include="Fish.cpp" />
+    <ClCompile Include="FoodBase.cpp" />
+    <ClCompile Include="Order.cpp" />
+    <ClCompile Include="OrderItem.cpp" />
     <ClCompile Include="OrderSystem.cpp" />
+    <ClCompile Include="Sandwich.cpp" />
+    <ClCompile Include="Sushi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bread.h" />
+    <ClInclude Include="Drink.h" />
+    <ClInclude Include="Fish.h" />
+    <ClInclude Include="FoodBase.h" />
+    <ClInclude Include="Order.h" />
+    <ClInclude Include="OrderItem.h" />
+    <ClInclude Include="Sandwich.h" />
+    <ClInclude Include="Sushi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
