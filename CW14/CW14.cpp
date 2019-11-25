@@ -25,7 +25,7 @@ int main()
 	int arr1[] = { 10, 20, 15, 12, 87, 120, 33, 67, 9, 25 };
 	cout << "The maximum value is: " << maximum(arr1) << endl;
 
-	float arr2[] = { 5.5, 30.9,101.5, 3.2, 4.5, 23.8, 13.9, 78.8, 60.2, 50.0};
+	double arr2[] = { 5.5, 30.9,101.5, 3.2, 4.5, 23.8, 13.9, 78.8, 60.2, 50.0};
 	cout << "The maximum value is: " << maximum(arr2) << endl;
 
 	char arr3[] = { 't', 'e', 'c', 'h', 'n', 'o', 'l', 'o', 'g', 'y'};

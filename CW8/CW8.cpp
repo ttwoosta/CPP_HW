@@ -19,7 +19,7 @@ int main()
 	cin >> enteredWord;
 	
 	// iterate through the char in word and store them in stack
-	for (int i = 0; i < enteredWord.length(); i++) {
+	for (int i = 0; i < (int)enteredWord.length(); i++) {
 		chrStack.push(enteredWord[i]);
 	}
 
@@ -37,7 +37,7 @@ int main()
 	cin >> enteredWord;
 
 	// store the letter of word into queue
-	for (int i = 0; i < enteredWord.length(); i++) {
+	for (int i = 0; i < (int)enteredWord.length(); i++) {
 		chrQueue.push(enteredWord[i]);
 	}
 

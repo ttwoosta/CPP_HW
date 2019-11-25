@@ -54,7 +54,7 @@ int main()
 
 	cout << "\n\n*************************************************" << endl;
 
-	for (int i = 0; i < order.size(); i++)
+	for (int i = 0; i < (int)order.size(); i++)
 	{
 		food = order[i];
 		orderTotal += food->price;
