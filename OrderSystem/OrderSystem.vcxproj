@@ -152,24 +152,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bread.cpp" />
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Drink.cpp" />
+    <ClCompile Include="DrinkOrderItem.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FoodBase.cpp" />
+    <ClCompile Include="Meat.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="OrderItem.cpp" />
     <ClCompile Include="OrderSystem.cpp" />
     <ClCompile Include="Sandwich.cpp" />
+    <ClCompile Include="SandwichOrderItem.cpp" />
     <ClCompile Include="Sushi.cpp" />
+    <ClCompile Include="SushiOrderItem.cpp" />
+    <ClCompile Include="Vegetable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bread.h" />
+    <ClInclude Include="Database.h" />
     <ClInclude Include="Drink.h" />
+    <ClInclude Include="DrinkOrderItem.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="FoodBase.h" />
+    <ClInclude Include="MainHeader.h" />
+    <ClInclude Include="Meat.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="OrderItem.h" />
     <ClInclude Include="Sandwich.h" />
+    <ClInclude Include="SandwichOrderItem.h" />
     <ClInclude Include="Sushi.h" />
+    <ClInclude Include="SushiOrderItem.h" />
+    <ClInclude Include="Vegetable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

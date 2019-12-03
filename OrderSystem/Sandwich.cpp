@@ -1,13 +1,12 @@
 #include "Sandwich.h"
 
 
-Sandwich::Sandwich(string name, string type_of_bread, double price) {
+Sandwich::Sandwich(string name, double price, int waitTime) {
 	this->name = name;
 	this->price = price;
-	this->type_of_bread = type_of_bread;
-	delivery = true;
+	this->waitTime = waitTime;
 }
 
 string Sandwich::desc() {
-	return name + " " + type_of_bread + " $" + to_string(price);
+	return "Sandwich";
 }

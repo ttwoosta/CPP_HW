@@ -1,13 +1,13 @@
 #pragma once
 
-#include <string>
-using namespace std;
+#include "FoodBase.h"
 
-class Fish
+class Fish:
+	public FoodBase
 {
 public:
-	string name;
-	double price;
+	Fish(string name, double price, int waitTime);
+	string desc();
 };
 
 typedef Fish* FishPtr;

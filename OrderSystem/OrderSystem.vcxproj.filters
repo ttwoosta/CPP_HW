@@ -13,59 +13,110 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Food">
+      <UniqueIdentifier>{69249ff9-4a9f-4b39-869d-34a6dcbe7ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Food">
+      <UniqueIdentifier>{7ef6762d-bfdd-4087-8a63-980b10cf109e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OrderItem">
+      <UniqueIdentifier>{3c719afc-960c-441f-8fc2-127a0ce3d7cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OrderItem">
+      <UniqueIdentifier>{30422ae7-f825-4933-ac10-18b2808db8ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OrderSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FoodBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sushi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sandwich.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Order.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OrderItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drink.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Fish.cpp">
+    <ClCompile Include="Database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Bread.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Drink.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="FoodBase.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Meat.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Vegetable.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Sushi.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Sandwich.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="SushiOrderItem.cpp">
+      <Filter>Source Files\OrderItem</Filter>
+    </ClCompile>
+    <ClCompile Include="SandwichOrderItem.cpp">
+      <Filter>Source Files\OrderItem</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderItem.cpp">
+      <Filter>Source Files\OrderItem</Filter>
+    </ClCompile>
+    <ClCompile Include="DrinkOrderItem.cpp">
+      <Filter>Source Files\OrderItem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FoodBase.h">
+    <ClInclude Include="MainHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sushi.h">
+    <ClInclude Include="Database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sandwich.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="DrinkOrderItem.h">
+      <Filter>Header Files\OrderItem</Filter>
     </ClInclude>
-    <ClInclude Include="Order.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="SandwichOrderItem.h">
+      <Filter>Header Files\OrderItem</Filter>
+    </ClInclude>
+    <ClInclude Include="SushiOrderItem.h">
+      <Filter>Header Files\OrderItem</Filter>
     </ClInclude>
     <ClInclude Include="OrderItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Drink.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fish.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\OrderItem</Filter>
     </ClInclude>
     <ClInclude Include="Bread.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Drink.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="FoodBase.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Meat.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Sushi.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Sandwich.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Vegetable.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

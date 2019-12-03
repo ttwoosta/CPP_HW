@@ -33,6 +33,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointerAndClasses", "Pointe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrderSystem", "OrderSystem\OrderSystem.vcxproj", "{E6742381-8275-4BFE-8C6B-CD3E324C8454}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BA46A4B-0777-4E89-9290-8ABE3E77773F}"
+	ProjectSection(SolutionItems) = preProject
+		FoodDatabase.txt = FoodDatabase.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

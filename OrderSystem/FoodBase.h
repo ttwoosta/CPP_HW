@@ -2,17 +2,18 @@
 /*
 	Base class
 */
+#pragma once
 #include <string>
 using namespace std;
 
 class FoodBase
 {
 public:
+	int id;
 	string name;
 	double price;
-	bool delivery;
-
-	virtual string desc() = 0;
+	int waitTime;
+	virtual string desc();
 };
 
 typedef FoodBase* FoodPtr;

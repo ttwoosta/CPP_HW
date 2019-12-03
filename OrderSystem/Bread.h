@@ -1,13 +1,12 @@
 #pragma once
+#include "FoodBase.h"
 
-#include <string>
-using namespace std;
-
-class Bread
+class Bread: 
+	public FoodBase
 {
 public:
-	string name;
-	double price;
+	Bread(string name, double price, int waitTime);
+	string desc();
 };
 
 typedef Bread* BreadPtr;
