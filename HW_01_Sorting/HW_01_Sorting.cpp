@@ -69,6 +69,8 @@ int main()
         for (int round = 0; round < 10; round++)
         {
             list = generate_random_list(f);
+            std::sort(list.begin(), list.begin() + list.size());
+            std::reverse(list.begin(), list.end());
 
             std::printf("Working on array %d elements round %d ...\n", f, round);
             //std::fprintf(csv_file, "%d,%d,", f, round);
@@ -83,16 +85,21 @@ int main()
                 timeResults[0][round] = tEnd;
             }
             else {
-                std::fprintf(csv_file, "0,");
+                //std::fprintf(csv_file, "0,");
                 timeResults[0][round] = 0;
             }
 
-            std::printf("Quick Sort begin...\n");
-            tStart = clock();
-            result = quickSort(list, 0, f - 1);
-            tEnd = clock() - tStart;
-            //print_result_list("Quick Sort", result, tEnd, csv_file);
-            timeResults[1][round] = tEnd;
+            if (f < 1001) {
+                std::printf("Quick Sort begin...\n");
+                tStart = clock();
+                result = quickSort(list, 0, f - 1);
+                tEnd = clock() - tStart;
+                //print_result_list("Quick Sort", result, tEnd, csv_file);
+                timeResults[1][round] = tEnd;
+            }
+            else {
+                timeResults[1][round] = 0;
+            }
 
             std::printf("Merge Sort begin...\n");
             tStart = clock();
