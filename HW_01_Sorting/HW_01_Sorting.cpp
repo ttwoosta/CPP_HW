@@ -38,26 +38,45 @@ of numbers and record the findings
 #include <stdio.h>
 using namespace std;
 
-vector<int> generate_random_list(int n);
+void generate_random_list(vector<int> &list, int n);
 void print_list(string desc, vector<int> list);
 void print_result_list(string desc, vector<int> result, clock_t t, FILE* csv_file);
 
-vector<int> insertionSort(vector<int> a);
-vector<int> mergeSort(vector<int> a, int p, int r);
+void insertionSort(vector<int> &a);
+void mergeSort(vector<int> &a, int p, int r);
 void merge(vector<int>& a, int p, int q, int r);
 
-vector<int> quickSort(vector<int> a, int p, int r);
+void quickSort(vector<int> &a, int p, int r);
 int partition(vector<int>& a, int p, int r);
 
 int main()
 {
     clock_t tStart, tEnd;
     int f = 0;
+    vector<int> list_reserve;
     vector<int> list;
     vector<int> result;
     clock_t timeResults[4][10];
     FILE* csv_file = NULL;
     int eleCounts[5] = { 10, 100, 1000, 10000, 100000 };
+
+    generate_random_list(list, f);
+    //std::sort(list.begin(), list.begin() + list.size());
+    //std::reverse(list.begin(), list.end());
+    list_reserve = list;
+
+    /*std::sort(list.begin(), list.begin() + list.size());
+    std::reverse(list.begin(), list.end());*/
+    //print_list("Before", list);
+    std::printf("Insertion Sort begin...\n");
+    tStart = clock();
+    //mergeSort(list, 0, f - 1);
+    insertionSort(list);
+    tEnd = clock() - tStart;
+    //print_list("After", list);
+    printf(" ended. It took: %dms\n", tEnd);
+    //print_list("After", list_reserve);
+    return 0;
 
     fopen_s(&csv_file, "C:\\Bob\\sort_bench.csv", "w");
     std::fprintf(csv_file, "Element Count,Round #,Insertion,Quick,Merge,Built-in\n");
@@ -68,45 +87,45 @@ int main()
 
         for (int round = 0; round < 10; round++)
         {
-            list = generate_random_list(f);
+            generate_random_list(list, f);
             std::sort(list.begin(), list.begin() + list.size());
-            std::reverse(list.begin(), list.end());
+            //std::reverse(list.begin(), list.end());
+
+            list_reserve = list;
 
             std::printf("Working on array %d elements round %d ...\n", f, round);
             //std::fprintf(csv_file, "%d,%d,", f, round);
 
             // skip Insertion sort if list contains more than 10,000 elements
-            if (f < 10001) { 
-                std::printf("Insertion Sort begin...\n");
-                tStart = clock();
-                result = insertionSort(list);
-                tEnd = clock() - tStart;
-                //print_result_list("Insertion Sort", result, tEnd, csv_file);
-                timeResults[0][round] = tEnd;
-            }
-            else {
-                //std::fprintf(csv_file, "0,");
-                timeResults[0][round] = 0;
-            }
+            std::printf("Insertion Sort begin...\n");
+            tStart = clock();
+            insertionSort(list);
+            tEnd = clock() - tStart;
+            //print_result_list("Insertion Sort", result, tEnd, csv_file);
+            timeResults[0][round] = tEnd;
 
-            if (f < 1001) {
-                std::printf("Quick Sort begin...\n");
-                tStart = clock();
-                result = quickSort(list, 0, f - 1);
-                tEnd = clock() - tStart;
-                //print_result_list("Quick Sort", result, tEnd, csv_file);
-                timeResults[1][round] = tEnd;
-            }
-            else {
-                timeResults[1][round] = 0;
-            }
+            // make copy of the org list
+            list = list_reserve;
+
+            std::printf("Quick Sort begin...\n");
+            tStart = clock();
+            quickSort(list, 0, f - 1);
+            tEnd = clock() - tStart;
+            //print_result_list("Quick Sort", result, tEnd, csv_file);
+            timeResults[1][round] = tEnd;
+
+            // make copy of the org list
+            list = list_reserve;
 
             std::printf("Merge Sort begin...\n");
             tStart = clock();
-            result = mergeSort(list, 0, f - 1);
+            mergeSort(list, 0, f - 1);
             tEnd = clock() - tStart;
             //print_result_list("Merge Sort", result, tEnd, csv_file);
             timeResults[2][round] = tEnd;
+
+            // make copy of the org list
+            list = list_reserve;
 
             std::printf("Built-in Sort begin...\n");
             tStart = clock();
@@ -139,7 +158,7 @@ int main()
     return 0;
 }
 
-vector<int> insertionSort(vector<int> a) {
+void insertionSort(vector<int> &a) {
     for (int j = 1; j < a.size(); j++)
     {
         int key = a[j];
@@ -153,21 +172,19 @@ vector<int> insertionSort(vector<int> a) {
 
         a[i + 1] = key;
     }
-    return a;
 }
 
 // merge sort function
-vector<int> mergeSort(vector<int> a, int p, int r)
+void mergeSort(vector<int> &a, int p, int r)
 {
     int q;
     if (p < r)
     {
         q = (p + r) / 2;
-        a = mergeSort(a, p, q);
-        a = mergeSort(a, q + 1, r);
+        mergeSort(a, p, q);
+        mergeSort(a, q + 1, r);
         merge(a, p, q, r);
     }
-    return a;
 }
 
 // function to merge the subarrays
@@ -206,16 +223,13 @@ void merge(vector<int> &a, int p, int q, int r)
     }
 }
 
-vector<int> generate_random_list(int n) {
+void generate_random_list(vector<int>& list, int n) {
     default_random_engine generator;
     uniform_int_distribution<int> distribution(1, n);
-
-    vector<int> list;
+    list.clear();
     for (size_t i = 0; i < n; i++)
         // generates number in the range 1..n 
         list.push_back(distribution(generator));
-
-    return list;
 }
 
 void print_list(string desc, vector<int> list) {
@@ -232,15 +246,15 @@ void print_result_list(string desc, vector<int> result, clock_t t, FILE* csv_fil
     std::fprintf(csv_file, "%d,", t);
 }
 
-vector<int> quickSort(vector<int> a, int p, int r) {
+void quickSort(vector<int> &a, int p, int r) {
     if (p < r) {
         int q = partition(a, p, r);
-        a = quickSort(a, p, q - 1);
-        a = quickSort(a, q + 1, r);
+        quickSort(a, p, q - 1);
+        quickSort(a, q + 1, r);
     }
-    return a;
 }
 
+// https://stackoverflow.com/questions/37288359/quick-sort-stack-overflow-c-big-numbers
 int partition(vector<int>& a, int p, int r) {
     int x = a[r];
     int temp;
@@ -261,3 +275,5 @@ int partition(vector<int>& a, int p, int r) {
 
     return i + 1;
 }
+
+
