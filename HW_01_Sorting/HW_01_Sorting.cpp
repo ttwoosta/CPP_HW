@@ -49,10 +49,13 @@ void merge(vector<int>& a, int p, int q, int r);
 void quickSort(vector<int> &a, int p, int r);
 int partition(vector<int>& a, int p, int r);
 
+int findMedian(vector<int> a, int left, int right);
+void medianSort(vector<int>& a, int left, int right);
+
 int main()
 {
     clock_t tStart, tEnd;
-    int f = 0;
+    int f = 10;
     vector<int> list_reserve;
     vector<int> list;
     vector<int> result;
@@ -60,22 +63,30 @@ int main()
     FILE* csv_file = NULL;
     int eleCounts[5] = { 10, 100, 1000, 10000, 100000 };
 
-    generate_random_list(list, f);
+    //generate_random_list(list, f);
     //std::sort(list.begin(), list.begin() + list.size());
     //std::reverse(list.begin(), list.end());
+	list.push_back(9);
+	list.push_back(6);
+	list.push_back(1);
+	list.push_back(3);
+	list.push_back(7);
+	
     list_reserve = list;
 
     /*std::sort(list.begin(), list.begin() + list.size());
     std::reverse(list.begin(), list.end());*/
-    //print_list("Before", list);
-    std::printf("Insertion Sort begin...\n");
+    print_list("Before", list);
+    //std::printf("Insertion Sort begin...\n");
     tStart = clock();
     //mergeSort(list, 0, f - 1);
-    insertionSort(list);
+	int median = findMedian(list, 0, list.size());
+	medianSort(list, 0, list.size());
     tEnd = clock() - tStart;
     //print_list("After", list);
     printf(" ended. It took: %dms\n", tEnd);
-    //print_list("After", list_reserve);
+    print_list("After", list);
+	cout << "Median value: " << median << endl;
     return 0;
 
     fopen_s(&csv_file, "C:\\Bob\\sort_bench.csv", "w");
@@ -276,4 +287,120 @@ int partition(vector<int>& a, int p, int r) {
     return i + 1;
 }
 
+int findMedian(vector<int> a, int left, int right) {
+	std::sort(a.begin() + left, a.begin() + right);
+	int size = right - left;
+	int median;
 
+	if (size % 2 == 0)
+		return a[left + (size / 2)];
+	else
+		return a[left + ((size - 1) / 2)];
+}
+
+int findMedianPosition(vector<int> a, int left, int right) {
+	vector<int> copied = a;
+	std::sort(copied.begin()+ left, copied.begin() + right);
+	int size = right - left;
+	int median;
+
+	if (size % 2 == 0)
+		median = copied[left + (size / 2)];
+	else
+		median = copied[left + ((size - 1) / 2)];
+
+	for (size_t i = left; i < right; i++)
+	{
+		if (a[i] == median)
+			return i;
+	}
+}
+
+/*int findMedian(vector<int>& a, int left, int right) {
+	int max, min;
+	int median;
+	int mid = a.size() / 2; // mid position
+	int leftCount = 0, rightCount = 0;
+
+	if (a[left] > a[left+1]) {
+		max = a[left];
+		min = a[left+1];
+	}
+	else {
+		max = a[left+1];
+		min = a[left];
+	}
+
+	for (size_t i = left; i < right; i++)
+	{
+		if (max < a[i])
+			max = a[i];
+		else if (min > a[i])
+			min = a[i];
+	}
+
+	median = (max + min) / 2.0;
+	for (size_t i = left; i < right; i++)
+	{
+		if (a[i] < median)
+			leftCount++;
+		else if (a[i] >= median)
+			rightCount++;
+	}
+
+	int direction = 0;
+
+	if (leftCount == rightCount) {
+		direction = 0;
+	}
+	else if (leftCount > rightCount) {
+		direction = (leftCount - rightCount) / 2;
+	}
+	else {  // right > left
+		direction = (rightCount - leftCount) / 2;
+
+		
+	}
+
+	return median;
+}*/
+
+void medianSort(vector<int>& a, int left, int right) {
+
+	if (left < right) {
+		if (right - left == 1) {
+
+			return;
+		}
+
+		int mid = (left + right) / 2 ;
+		int medianPos = findMedianPosition(a, left, right);
+		int temp;
+
+		temp = a[mid];
+		a[mid] = a[medianPos];
+		a[medianPos] = temp;
+
+		for (size_t i = left; i < mid - 1; i++)
+		{
+			if (a[i] > a[mid]) {
+				for (size_t k = mid; k < right; k++)
+				{
+					if (a[k] <= a[mid]) {
+						temp = a[i];
+						a[i] = a[k];
+						a[k] = temp;
+						
+						
+
+					}
+				}
+			}
+
+			
+		}
+
+		medianSort(a, left, mid - 1);
+		medianSort(a, mid + 1, right);
+	}
+}
