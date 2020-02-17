@@ -16,15 +16,35 @@ In C++, implement a binary search tree (BST) data structure with the following f
 using namespace std;
 
 void generate_random_list(vector<int>& list, int n);
+void print_list(string desc, vector<int> list);
+void print(TreeNodePtr node);
 
 int main()
 {
+	int input;
+	TreeNodePtr found;
+
 	vector<int> listNum;
 	generate_random_list(listNum, 10);
+	print_list("Generated", listNum);
+	BinaryTreePtr btree = new BinarySearchTree(listNum);
 
-	BinaryTreePtr btree = new BinaryTree(listNum);
+	cout << "\nIn-order walk: ";
+	btree->inorderWalk(print);
 
-	btree->printDebug();
+	cout << "\n\nEnter an number to search: ";
+	cin >> input;
+	found = btree->search(input);
+	if (found != NULL)
+		cout << "Found a node" << endl;
+	else
+		cout << "Node with value " << input << " not found" << endl;
+	
+	return 0;
+}
+
+void print(TreeNodePtr node) {
+	cout << node->value << " ";
 }
 
 void generate_random_list(vector<int>& list, int n) {
@@ -36,3 +56,9 @@ void generate_random_list(vector<int>& list, int n) {
 		list.push_back(distribution(generator));
 }
 
+void print_list(string desc, vector<int> list) {
+	cout << desc << ": ";
+	for (size_t i = 0; i < list.size() - 1; i++)
+		cout << list[i] << " ";
+	cout << list[list.size() - 1] << endl;
+}
