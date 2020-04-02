@@ -48,6 +48,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticLib1", "StaticLib1\St
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StrNDynamic", "StrNDynamic\StrNDynamic.vcxproj", "{D6469F7B-66E9-411C-8AA2-DC07737BDB1F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graph", "Graph\Graph.vcxproj", "{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -216,6 +218,14 @@ Global
 		{D6469F7B-66E9-411C-8AA2-DC07737BDB1F}.Release|x64.Build.0 = Release|x64
 		{D6469F7B-66E9-411C-8AA2-DC07737BDB1F}.Release|x86.ActiveCfg = Release|Win32
 		{D6469F7B-66E9-411C-8AA2-DC07737BDB1F}.Release|x86.Build.0 = Release|Win32
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Debug|x64.ActiveCfg = Debug|x64
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Debug|x64.Build.0 = Debug|x64
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Debug|x86.ActiveCfg = Debug|Win32
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Debug|x86.Build.0 = Debug|Win32
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Release|x64.ActiveCfg = Release|x64
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Release|x64.Build.0 = Release|x64
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Release|x86.ActiveCfg = Release|Win32
+		{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
