@@ -16,3 +16,17 @@ void LinkedListGraph<vType>::getAdjacentVerticies(vType adjacencyList[], int& le
 		current = current->link;
 	}
 }
+
+template<class vType>
+void LinkedListGraph<vType>::print()
+{
+	nodeType<vType>* current;
+
+	current = this->first;
+
+	while (current != NULL)
+	{
+		cout << current;
+		current = current->link;
+	}
+}

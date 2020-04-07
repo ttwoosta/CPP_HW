@@ -62,7 +62,7 @@ template<class vType, int size>
 void GraphType<vType, size>::createGraph()
 {
 	ifstream infile;
-	char fileName[50];
+	string fileName;
 
 	vType vertex;
 	vType adjacentVertex;
@@ -74,6 +74,8 @@ void GraphType<vType, size>::createGraph()
 	cin >> fileName;
 	cout << endl;
 
+	fileName = "c:\\Bob\\file.txt";
+
 	infile.open(fileName);
 
 	if (!infile) {
@@ -81,19 +83,38 @@ void GraphType<vType, size>::createGraph()
 		return;
 	}
 
-	infile >> gSize; // get the number of vertices
+	char line[256];
+	string cell;
+	int i = 0;
+	int j = 0;
 
-	for (int i = 0; i < gSize; i++)
+	while (infile.getline(line, 256))
 	{
-		infile >> vertex;
-		infile >> adjacentVertex;
-
-		while (adjacentVertex != 999)
+		while (line[i])
 		{
-			graph[vertex].insertLast(adjacentVertex);
-			infile >> adjacentVertex;
+			if (line[i] != ',') {
+				graph[j].insertLast(line[i]);
+				j++;
+			}
+			i++;
 		}
 	}
+
+	cout << i;
+
+	//infile >> gSize; // get the number of vertices
+
+	//for (int i = 0; i < gSize; i++)
+	//{
+	//	infile >> vertex;
+	//	infile >> adjacentVertex;
+
+	//	while (adjacentVertex != 999)
+	//	{
+	//		graph[vertex].insertLast(adjacentVertex);
+	//		infile >> adjacentVertex;
+	//	}
+	//}
 
 	infile.close();
 }
@@ -112,5 +133,10 @@ void GraphType<vType, size>::clearGraph()
 template<class vType, int size>
 void GraphType<vType, size>::printGraph() const
 {
-	
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i << " ";
+		this->graph[i].print();
+		cout << endl;
+	}
 }

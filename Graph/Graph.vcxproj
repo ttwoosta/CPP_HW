@@ -152,10 +152,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="LinkedListGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphType.h" />
+    <ClInclude Include="LinkedListGraph.h" />
     <ClInclude Include="linkedListType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Bob\file.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
