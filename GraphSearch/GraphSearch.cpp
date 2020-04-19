@@ -41,6 +41,8 @@ int main()
 	
 	Graph graph(8, edges);
 
+	graph.printGraph();
+
 	cout << "Depth First Search\n";
 	graph.DFS(2);
 	cout << endl;

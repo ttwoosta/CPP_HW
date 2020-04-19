@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\..\Bob\file.txt = ..\..\Bob\file.txt
 		FoodDatabase.txt = FoodDatabase.txt
+		..\..\Bob\graph.csv = ..\..\Bob\graph.csv
+		..\..\Bob\graph_astar.csv = ..\..\Bob\graph_astar.csv
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HW_01_Sorting", "HW_01_Sorting\HW_01_Sorting.vcxproj", "{358C45CB-934C-4852-A4B2-594E734B2335}"
@@ -52,6 +54,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graph", "Graph\Graph.vcxproj", "{F1E704A3-4B7B-4FC0-A4F9-F04B8765539A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphSearch", "GraphSearch\GraphSearch.vcxproj", "{4F6D081E-5870-4A6B-826B-AD0443FDB1D6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PathFinding", "PathFinding\PathFinding.vcxproj", "{076F3BA9-1A65-4214-AB5B-2C19081BB713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +241,14 @@ Global
 		{4F6D081E-5870-4A6B-826B-AD0443FDB1D6}.Release|x64.Build.0 = Release|x64
 		{4F6D081E-5870-4A6B-826B-AD0443FDB1D6}.Release|x86.ActiveCfg = Release|Win32
 		{4F6D081E-5870-4A6B-826B-AD0443FDB1D6}.Release|x86.Build.0 = Release|Win32
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Debug|x64.ActiveCfg = Debug|x64
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Debug|x64.Build.0 = Debug|x64
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Debug|x86.ActiveCfg = Debug|Win32
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Debug|x86.Build.0 = Debug|Win32
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Release|x64.ActiveCfg = Release|x64
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Release|x64.Build.0 = Release|x64
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Release|x86.ActiveCfg = Release|Win32
+		{076F3BA9-1A65-4214-AB5B-2C19081BB713}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

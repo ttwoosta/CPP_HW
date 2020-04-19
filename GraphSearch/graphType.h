@@ -46,6 +46,8 @@ public:
 	// prints a Topological Sort of the complete graph 
 	// https://www.geeksforgeeks.org/topological-sorting/
 	void topologicalSort();
+
+	void printGraph();
 };
 
 Graph::Graph(int V, vector<graphEdge> edges)
@@ -171,5 +173,15 @@ void Graph::topologicalSort()
 	{
 		cout << Stack.top() << " ";
 		Stack.pop();
+	}
+}
+
+void Graph::printGraph() {
+
+	for (int v = 0; v < V; v++)
+	{
+		vector<int>::iterator i;
+		for (i = adj[v].begin(); i != adj[v].end(); ++i)
+			printf("(%d, %d)\n", v, (*i));
 	}
 }
