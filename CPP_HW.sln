@@ -35,10 +35,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrderSystem", "OrderSystem\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BA46A4B-0777-4E89-9290-8ABE3E77773F}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Bob\file.txt = ..\..\Bob\file.txt
 		FoodDatabase.txt = FoodDatabase.txt
-		..\..\Bob\graph.csv = ..\..\Bob\graph.csv
-		..\..\Bob\graph_astar.csv = ..\..\Bob\graph_astar.csv
+		graph.csv = graph.csv
+		graph_astar.csv = graph_astar.csv
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HW_01_Sorting", "HW_01_Sorting\HW_01_Sorting.vcxproj", "{358C45CB-934C-4852-A4B2-594E734B2335}"
